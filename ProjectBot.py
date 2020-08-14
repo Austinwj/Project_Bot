@@ -94,7 +94,11 @@ class ExampleBot(ananas.PineappleBot):
         # Tomorrow weather forecast
         tomorrow_weather = []
 
+<<<<<<< HEAD
         url = APIURL_forecast + location + KEY
+=======
+        url = APIURL_forecast + KEY
+>>>>>>> 7d9680c15e620a04bcd40400b196cb5f4f9e46ff
         forecast_res = requests.get(url)
         forecast_res_json = forecast_res.json()
         # print(forecast_res_json)
@@ -153,7 +157,11 @@ class ExampleBot(ananas.PineappleBot):
         # Acquired weather forecast
         the_day_after_tomorrow_weather = []
 
+<<<<<<< HEAD
         url = APIURL_forecast + location + KEY
+=======
+        url = APIURL_forecast + KEY
+>>>>>>> 7d9680c15e620a04bcd40400b196cb5f4f9e46ff
         forecast_res = requests.get(url)
         forecast_res_json = forecast_res.json()
         # print(forecast_res_json)
@@ -222,6 +230,7 @@ class ExampleBot(ananas.PineappleBot):
         country, province, city_name, lat, lon, local_update_weather_time, status,        now_date, now_cond_txt_d, now_sr, now_uv_index, now_ss, now_mr, now_ms, now_cond_txt_n, now_tmp_max, now_tmp_min, now_hum, now_wind_dir, now_wind_sc, now_wind_spd, now_pcpn, now_pop = self.today_weather()
 
         # Message construction
+<<<<<<< HEAD
         msg_today = 'Region：'+country+'--'+province+'--'+city_name+'\n'+'Longitude：'+lon+'\n'+'Latitude：'+lat+'\n============\n' + 'The Following is the Information for Today：\n'+'Date：'+now_date+'\nDaytime weather conditions：'+now_cond_txt_d+'\nUV intensity：'+now_uv_index+'\nHighest temperature：'+now_tmp_max+'\nMinimum temperature：'+now_tmp_min+ '\nSomatosensory temperature：'+feel_tmp+'\nRelative humidity：'+now_hum+'\nWind direction：'+now_wind_dir+'\nWind speed：'+now_wind_spd+'\nIs it raining：'+now_pcpn+'\nRain probability (percentage)：'+now_pop+'\n============' + '\nEvery day is beautiful, just enjoy it!'+'\n----From a Weather Bot'
 
         return msg_today
@@ -240,6 +249,26 @@ class ExampleBot(ananas.PineappleBot):
 
         msg_the_day_after_tomorrow = 'Region：'+country+'--'+province+'--'+city_name+'\n'+'Longitude：'+lon+'\n'+'Latitude：'+lat+'\n============\n' + 'The Following is the Information for Day_After_Tomorrow：\n'+'Date：'+the_day_after_tomorrow_date+'\nDaytime weather conditions：'+the_day_after_tomorrow_cond_txt_d+'\nUV intensity：'+the_day_after_tomorrow_uv_index+'\nHighest temperature：'+the_day_after_tomorrow_tmp_max+'\nMinimum temperature：'+the_day_after_tomorrow_tmp_min+ '\nRelative humidity：'+the_day_after_tomorrow_hum+'\nWind direction：'+the_day_after_tomorrow_wind_dir+'\nWind speed：'+the_day_after_tomorrow_wind_spd+'\nWill it rain Day_After_Tomorrow：'+the_day_after_tomorrow_pcpn+'\nRain probability (percentage)：'+the_day_after_tomorrow_pop+'\n============' + '\nEvery day is beautiful, just enjoy it!'+'\n----From a Weather Bot'
 
+=======
+        msg_today = 'Region：'+country+'--'+province+'--'+city_name+'\n'+'Longitude：'+lon+'\n'+'Latitude：'+lat+'\n=======================\n' + 'The Following is the Information for Today：\n'+'Date：'+now_date+'\nDaytime weather conditions：'+now_cond_txt_d+'\nUV intensity：'+now_uv_index+'\nHighest temperature：'+now_tmp_max+'\nMinimum temperature：'+now_tmp_min+ '\nSomatosensory temperature：'+feel_tmp+'\nRelative humidity：'+now_hum+'\nWind direction：'+now_wind_dir+'\nWind speed：'+now_wind_spd+'\nIs it raining：'+now_pcpn+'\nRain probability (percentage)：'+now_pop+'\n=======================' + '\nEvery day is beautiful, just enjoy it!'+'\n----From a Weather Bot'
+
+        return msg_today
+    
+    def tomorrow(self, tm_hour, tm_min):
+
+        country, province, city_name, lat, lon, local_update_weather_time, status, tomorrow_date, tomorrow_cond_txt_d, tomorrow_sr, tomorrow_uv_index, tomorrow_ss, tomorrow_mr, tomorrow_ms, tomorrow_cond_txt_n, tomorrow_tmp_max, tomorrow_tmp_min, tomorrow_hum, tomorrow_wind_dir, tomorrow_wind_sc, tomorrow_wind_spd, tomorrow_pcpn, tomorrow_pop = self.tomorrow_weather()
+
+        msg_tomorrow = 'Region：'+country+'--'+province+'--'+city_name+'\n'+'Longitude：'+lon+'\n'+'Latitude：'+lat+'\n=======================\n' + 'The Following is the Information for Tomorrow：\n'+'Date：'+tomorrow_date+'\nDaytime weather conditions：'+tomorrow_cond_txt_d+'\nUV intensity：'+tomorrow_uv_index+'\nHighest temperature：'+tomorrow_tmp_max+'\nMinimum temperature：'+tomorrow_tmp_min+ '\nRelative humidity：'+tomorrow_hum+'\nWind direction：'+tomorrow_wind_dir+'\nWind speed：'+tomorrow_wind_spd+'\nWill it rain Tomorrow：'+tomorrow_pcpn+'\nRain probability (percentage)：'+tomorrow_pop+'\n=======================' + '\nEvery day is beautiful, just enjoy it!'+'\n----From a Weather Bot'
+
+        return msg_tomorrow
+
+    def the_day_after_tomorrow(self, tm_hour, tm_min):
+
+        country, province, city_name, lat, lon, local_update_weather_time, status, the_day_after_tomorrow_date, the_day_after_tomorrow_cond_txt_d, the_day_after_tomorrow_sr, the_day_after_tomorrow_uv_index, the_day_after_tomorrow_ss,  the_day_after_tomorrow_mr, the_day_after_tomorrow_ms, the_day_after_tomorrow_cond_txt_n, the_day_after_tomorrow_tmp_max, the_day_after_tomorrow_tmp_min, the_day_after_tomorrow_hum, the_day_after_tomorrow_wind_dir, the_day_after_tomorrow_wind_sc, the_day_after_tomorrow_wind_spd, the_day_after_tomorrow_pcpn,        the_day_after_tomorrow_pop = self.the_day_after_tomorrow_weather()
+
+        msg_the_day_after_tomorrow = 'Region：'+country+'--'+province+'--'+city_name+'\n'+'Longitude：'+lon+'\n'+'Latitude：'+lat+'\n=======================\n' + 'The Following is the Information for Day_After_Tomorrow：\n'+'Date：'+the_day_after_tomorrow_date+'\nDaytime weather conditions：'+the_day_after_tomorrow_cond_txt_d+'\nUV intensity：'+the_day_after_tomorrow_uv_index+'\nHighest temperature：'+the_day_after_tomorrow_tmp_max+'\nMinimum temperature：'+the_day_after_tomorrow_tmp_min+ '\nRelative humidity：'+the_day_after_tomorrow_hum+'\nWind direction：'+the_day_after_tomorrow_wind_dir+'\nWind speed：'+the_day_after_tomorrow_wind_spd+'\nWill it rain Day_After_Tomorrow：'+the_day_after_tomorrow_pcpn+'\nRain probability (percentage)：'+the_day_after_tomorrow_pop+'\n=======================' + '\nEvery day is beautiful, just enjoy it!'+'\n----From a Weather Bot'
+
+>>>>>>> 7d9680c15e620a04bcd40400b196cb5f4f9e46ff
         return msg_the_day_after_tomorrow
 
     @ananas.hourly(minute=15)
@@ -252,7 +281,10 @@ class ExampleBot(ananas.PineappleBot):
     @ananas.reply
     def respond_weather(self, status, user):
         # post a reply of the form "@<user account>"
+<<<<<<< HEAD
         global location
+=======
+>>>>>>> 7d9680c15e620a04bcd40400b196cb5f4f9e46ff
         username = user["acct"]
         msg_rec = html_strip_tags(status["content"], True, chr(31))
 
@@ -272,11 +304,16 @@ class ExampleBot(ananas.PineappleBot):
         
         if len(Input) == 0:
 
+<<<<<<< HEAD
             msg_date = "The weather robot can query the weather conditions in the next three days" +'\n========\n'+ "1.Please @ Weatherbot +'location' +','+ 'Today' or 'Tomorrow' or 'Day After Tomorrow' to query (e.g. location,Today)"     +'\n========\n'+ "2.If the query result is not in the desired area, please query the location code first by @ Weatherbot +’location’+’&’+’range=ISO 3166 alpha-2 country code(lowercase!!!)’ (e.g. Glasgow&range=gb).The country code query address: https://www.iso.org/iso-3166-country-codes.html" +'\n========\n'+ "3.(e.g. location code,Today)"
+=======
+            msg_date = "The weather robot can query the weather conditions in the next three days, please @ Robot and enter 'The name of location' +','+ 'Today' or 'Tomorrow' or 'Day After Tomorrow' to query (e.g. location,Today)"
+>>>>>>> 7d9680c15e620a04bcd40400b196cb5f4f9e46ff
 
             self.mastodon.toot(msg_date)
         
         else:
+<<<<<<< HEAD
 
             location_date = Input[0].split(",")
             if len(location_date) == 1:
@@ -303,6 +340,21 @@ class ExampleBot(ananas.PineappleBot):
                 else:
                     msg = self.the_day_after_tomorrow(tm_hour, tm_min)
                     self.mastodon.toot("@{} {}".format(username, '\n'+msg))
+=======
+            location_date = Input[0].split(",")
+            print(location_date[0],location_date[1])
+            
+            tm_hour, tm_min = self.get_time()
+            if location_date[1] == "Today":
+                msg = self.today(tm_hour, tm_min)
+                self.mastodon.toot("@{} {}".format(username, '\n'+msg))
+            elif location_date[1] == "Tomorrow":
+                msg = self.tomorrow(tm_hour, tm_min)
+                self.mastodon.toot("@{} {}".format(username, '\n'+msg))
+            else:
+                msg = self.the_day_after_tomorrow(tm_hour, tm_min)
+                self.mastodon.toot("@{} {}".format(username, '\n'+msg))
+>>>>>>> 7d9680c15e620a04bcd40400b196cb5f4f9e46ff
 
         print("Received toot from {}: {}".format(username,msg_rec.replace(chr(31), "\n")))
         
