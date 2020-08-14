@@ -228,16 +228,20 @@ class ExampleBot(ananas.PineappleBot):
     
     def tomorrow(self, tm_hour, tm_min):
 
+        # Get all return values of now_and_future_twodays_weather() function
         country, province, city_name, lat, lon, local_update_weather_time, status, tomorrow_date, tomorrow_cond_txt_d, tomorrow_sr, tomorrow_uv_index, tomorrow_ss, tomorrow_mr, tomorrow_ms, tomorrow_cond_txt_n, tomorrow_tmp_max, tomorrow_tmp_min, tomorrow_hum, tomorrow_wind_dir, tomorrow_wind_sc, tomorrow_wind_spd, tomorrow_pcpn, tomorrow_pop = self.tomorrow_weather()
 
+        # Message construction
         msg_tomorrow = 'Region：'+country+'--'+province+'--'+city_name+'\n'+'Longitude：'+lon+'\n'+'Latitude：'+lat+'\n============\n' + 'The Following is the Information for Tomorrow：\n'+'Date：'+tomorrow_date+'\nDaytime weather conditions：'+tomorrow_cond_txt_d+'\nUV intensity：'+tomorrow_uv_index+'\nHighest temperature：'+tomorrow_tmp_max+'\nMinimum temperature：'+tomorrow_tmp_min+ '\nRelative humidity：'+tomorrow_hum+'\nWind direction：'+tomorrow_wind_dir+'\nWind speed：'+tomorrow_wind_spd+'\nWill it rain Tomorrow：'+tomorrow_pcpn+'\nRain probability (percentage)：'+tomorrow_pop+'\n============' + '\nEvery day is beautiful, just enjoy it!'+'\n----From a Weather Bot'
 
         return msg_tomorrow
 
     def the_day_after_tomorrow(self, tm_hour, tm_min):
 
+        # Get all return values of now_and_future_twodays_weather() function
         country, province, city_name, lat, lon, local_update_weather_time, status, the_day_after_tomorrow_date, the_day_after_tomorrow_cond_txt_d, the_day_after_tomorrow_sr, the_day_after_tomorrow_uv_index, the_day_after_tomorrow_ss,  the_day_after_tomorrow_mr, the_day_after_tomorrow_ms, the_day_after_tomorrow_cond_txt_n, the_day_after_tomorrow_tmp_max, the_day_after_tomorrow_tmp_min, the_day_after_tomorrow_hum, the_day_after_tomorrow_wind_dir, the_day_after_tomorrow_wind_sc, the_day_after_tomorrow_wind_spd, the_day_after_tomorrow_pcpn,        the_day_after_tomorrow_pop = self.the_day_after_tomorrow_weather()
 
+        # Message construction
         msg_the_day_after_tomorrow = 'Region：'+country+'--'+province+'--'+city_name+'\n'+'Longitude：'+lon+'\n'+'Latitude：'+lat+'\n============\n' + 'The Following is the Information for Day_After_Tomorrow：\n'+'Date：'+the_day_after_tomorrow_date+'\nDaytime weather conditions：'+the_day_after_tomorrow_cond_txt_d+'\nUV intensity：'+the_day_after_tomorrow_uv_index+'\nHighest temperature：'+the_day_after_tomorrow_tmp_max+'\nMinimum temperature：'+the_day_after_tomorrow_tmp_min+ '\nRelative humidity：'+the_day_after_tomorrow_hum+'\nWind direction：'+the_day_after_tomorrow_wind_dir+'\nWind speed：'+the_day_after_tomorrow_wind_spd+'\nWill it rain Day_After_Tomorrow：'+the_day_after_tomorrow_pcpn+'\nRain probability (percentage)：'+the_day_after_tomorrow_pop+'\n============' + '\nEvery day is beautiful, just enjoy it!'+'\n----From a Weather Bot'
 
         return msg_the_day_after_tomorrow
