@@ -246,14 +246,18 @@ class ExampleBot(ananas.PineappleBot):
 
         return msg_the_day_after_tomorrow
 
-    @ananas.hourly(minute=15)
+    @ananas.daily(hour=6, minute=30)
+    # Automatically post the Weather conditions of the specified location at fixed time, the current location is Glasgow
     def toot(self):
+        global location
+        location = "E2080"
         tm_hour, tm_min = self.get_time()
         msg = self.today(tm_hour, tm_min)
         self.mastodon.toot(msg)
         print('Tooted: %s' % msg)
-
+    
     @ananas.reply
+    # Address ID query and Weather condition query
     def respond_weather(self, status, user):
         # post a reply of the form "@<user account>"
         global location
@@ -282,7 +286,10 @@ class ExampleBot(ananas.PineappleBot):
         
         else:
 
+            # According to "," split list elements
             location_date = Input[0].split(",")
+            
+            # If the length of the returned list after element separation is 1, it means that there is no "," in the original list; the purpose of user input is to query the location Id
             if len(location_date) == 1:
                 
                 url = APIURL_locid + Input[0] + KEY
@@ -292,7 +299,8 @@ class ExampleBot(ananas.PineappleBot):
                 locid = locid_res_json["location"][0]["id"]
 
                 self.mastodon.toot(locid)
-        
+
+            # Otherwise, the user's purpose is to check weather conditions
             else:
                 location = location_date[0]
                 print(location_date[0],location_date[1])
