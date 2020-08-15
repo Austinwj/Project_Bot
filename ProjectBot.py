@@ -6,7 +6,6 @@ from ananas import html_strip_tags
 from bs4 import BeautifulSoup
 import json
 import requests
-import json
 import time
 
 KEY = "&key=0ad1aed5d18442c9a13f7caa139df5be"
