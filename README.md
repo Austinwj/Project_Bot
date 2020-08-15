@@ -1,4 +1,6 @@
-# WeatherBot
+# WeatherBot  ![GitHub](https://img.shields.io/github/license/Austinwj/Project_Bot)
+
+
 
 A Mastodon bot that can check weather conditions almost everywhere.
 
