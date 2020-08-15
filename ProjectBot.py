@@ -252,10 +252,7 @@ class ExampleBot(ananas.PineappleBot):
     @ananas.reply
     def respond_weather(self, status, user):
         # post a reply of the form "@<user account>"
-<<<<<<< HEAD
         global location
-=======
->>>>>>> 7d9680c15e620a04bcd40400b196cb5f4f9e46ff
         username = user["acct"]
         msg_rec = html_strip_tags(status["content"], True, chr(31))
 
