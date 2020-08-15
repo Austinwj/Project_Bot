@@ -1,0 +1,4 @@
+ananas>=1.0.0b18
+beautifulsoup4>=4.6.3
+Mastodon.py>=1.2.2
+lxml>=4.2.5
