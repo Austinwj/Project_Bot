@@ -37,7 +37,7 @@ A Mastodon bot that can check weather conditions almost everywhere.
 ## Explanation
 
 * @WeatherBot can view instructions.
-* The program is set in the UK 🇬🇧 daily at 06:30 to post the weather conditions (the default address is Glasgow). Functions and others can be modified by referring to ananas.
+* The program is set in the UK 🇬🇧 daily at 06:30 to post the weather conditions (the default location is Glasgow). Functions and others can be modified by referring to ananas.
 * The location can be input in multiple languages, Chinese and English are recommended. Among them, the Chinese input location query is the most accurate, because the location may have the same name, and the weather API used by the bot will optimize the ranking according to the frequency of location popularity when using Chinese input location for query.
 
 See [ananas](https://github.com/chr-1x/ananas) for more details on the bot framework.
